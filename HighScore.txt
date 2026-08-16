@@ -1,0 +1,42 @@
+
+--- New Record ---
+Name: Shyam
+Score: 3
+Game No: 1
+------------------
+
+--- New Record ---
+Name: Sahil
+Score: 7
+Game No: 2
+------------------
+
+--- New Record ---
+Name: vaibhav
+Score: 14
+Game No: 1
+------------------
+
+--- New Record ---
+Name: aditya
+Score: 1
+Game No: 1
+------------------
+
+--- New Record ---
+Name: Aryan
+Score: 10
+Game No: 1
+------------------
+
+--- New Record ---
+Name: vaibhav
+Score: 6
+Game No: 1
+------------------
+
+--- New Record ---
+Name: Xavier
+Score: 17
+Game No: 2
+------------------
