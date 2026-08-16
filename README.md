@@ -2,22 +2,6 @@
 
 A classic Snake game implemented in Java using Swing and AWT. It includes customizable window dimensions, progressive difficulty, timed apple spawning, screen wraparound, self-collision detection, and persistent per-player high score tracking via a local text file.
 
----
-
-## Table of contents
-
-- [Features](#features)
-- [Requirements](#requirements)
-- [Build & run](#build--run)
-- [Configuration](#configuration)
-- [Gameplay & controls](#gameplay--controls)
-- [High score storage](#high-score-storage)
-- [Notes & known issues](#notes--known-issues)
-- [Contributing](#contributing)
-- [Credits](#credits)
-
----
-
 ## Features
 
 - Customizable window size at startup (default: 600×600; minimum: 200×200).
