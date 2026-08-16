@@ -1,56 +1,91 @@
-🐍 Snake Game (Java Swing)
+# Snake Game (Java Swing)
 
-A classic Snake Game built in Java using Swing, featuring customizable window dimensions, progressive difficulty, timed apple spawning, and persistent per-player high score tracking.
+A classic Snake game implemented in Java using Swing and AWT. It includes customizable window dimensions, progressive difficulty, timed apple spawning, screen wraparound, self-collision detection, and persistent per-player high score tracking via a local text file.
 
-🚀 Features
-🖥️ Customizable game window – Set your own width and height at startup (minimum 200x200), or use the default 600x600.
-⚡ Progressive difficulty – The snake speeds up gradually as you eat more apples.
-🍎 Timed apple spawning – Apples disappear after a set duration if not eaten, and a new one spawns automatically. Apple lifetime increases slightly with each apple eaten.
-🔁 Screen wraparound – The snake passes through walls and reappears on the opposite side instead of dying on contact.
-💥 Self-collision detection – The game ends if the snake runs into its own body.
-🏆 Persistent high scores – Player name, score, and game number are saved to a local text file, with the all-time high score loaded on startup.
-📊 Live score tracking – Current score, high score, and game number are displayed on screen during play.
-🔄 Restart on demand – Press Enter after Game Over to start a new round instantly.
-🎮 Controls
-Key	Action
-↑	Move Up
-↓	Move Down
-←	Move Left
-→	Move Right
-Enter	Restart after Game Over
-🚀 Getting Started
+---
 
-Follow the steps below to set up and run the project locally.
+## Table of contents
 
-1️⃣ Requirements
+- [Features](#features)
+- [Requirements](#requirements)
+- [Build & run](#build--run)
+- [Configuration](#configuration)
+- [Gameplay & controls](#gameplay--controls)
+- [High score storage](#high-score-storage)
+- [Notes & known issues](#notes--known-issues)
+- [Contributing](#contributing)
+- [Credits](#credits)
 
-Make sure Java (JDK 8 or later) is installed on your system.
+---
 
-2️⃣ Compile the Game
+## Features
 
-Open a terminal in the project directory and run:
+- Customizable window size at startup (default: 600×600; minimum: 200×200).
+- Progressive difficulty: the snake speeds up as more apples are eaten.
+- Timed apple spawning: apples disappear after a configured lifetime; each eaten apple increases lifetime slightly.
+- Screen wraparound: moving through a wall makes the snake reappear on the opposite side.
+- Self-collision detection: game over when the snake collides with its body.
+- Persistent high scores saved to a local text file (player name, score, and game number).
+- Live on-screen display of current score, high score, and game number.
+- Restart immediately after Game Over by pressing Enter.
 
-bash
+## Requirements
+
+- Java Development Kit (JDK) 8 or later.
+
+## Build & run
+
+1. Open a terminal in the project root (where `SnakeGame.java` is located).
+
+2. Compile:
+
+```bash
 javac SnakeGame.java
-3️⃣ Run the Game
-bash
+```
+
+3. Run:
+
+```bash
 java SnakeGame
+```
 
-Enter your preferred width and height when prompted, or leave the fields blank to use the default 600x600.
+You will be prompted to enter a preferred window width and height. Leave blank to use the default 600×600. The program enforces a minimum of 200×200.
 
-💾 High Score Storage
+## Configuration
 
-High scores are saved locally in a text file (HighScore.txt), recording the player's name, score, and game number for every new high score achieved. The all-time high score is automatically loaded the next time the game runs.
+- High scores are written to a local text file. The current implementation uses a hardcoded path (see the `FILE_PATH` variable in `SnakeGame.java`). Before running the game, update `FILE_PATH` to a writable location on your machine or change it to a relative path if you prefer the file to live next to the JAR/class files.
 
-⚠️ Note: The current version uses a hardcoded file path for saving scores. Update the FILE_PATH variable in SnakeGame.java to a location on your own system before running, or modify it to save relative to the project directory for better portability.
+Suggested improvements:
+- Use a relative path (e.g. `./HighScore.txt`) or store the file under the user's home directory (`System.getProperty("user.home")`).
+- Use JSON or Java serialization for more robust score storage.
 
-🛠️ Technologies Used
-Language: Java
-GUI: Java Swing
-Graphics & Events: Java AWT
-Data Storage: Local file I/O (.txt)
-👨‍💻 Project
+## Gameplay & controls
 
-Snake Game (Java Swing) A Java desktop application project demonstrating practical implementation of GUI development, event handling, game logic, and file-based data persistence.
+- Arrow keys: change the snake's direction (Up / Down / Left / Right).
+- Enter: restart the game after Game Over.
 
-⭐ If you find this project useful, consider giving the repository a star!
+Gameplay details:
+- Apples spawn with a lifetime; if not eaten they disappear and a new apple spawns.
+- The snake increases speed gradually as you collect apples.
+- Passing through a wall wraps you to the opposite edge.
+
+## High score storage
+
+High scores are appended to a text file. Each saved record contains the player's name, the score, and the game number. On startup, the application attempts to load the all-time high score from this file and displays it in-game.
+
+## Notes & known issues
+
+- The default code saves scores using a hardcoded path. Update `FILE_PATH` before running or modify the implementation to use a configurable / relative path.
+- If you plan to distribute this application, consider:
+  - Handling file-not-found and I/O errors more gracefully.
+  - Switching to a structured file format (JSON) or lightweight database for portability.
+
+## Contributing
+
+Contributions, bug reports and enhancements are welcome. Please open an issue or submit a pull request with a clear description of the change and why it is needed.
+
+## Credits
+
+- Implemented with Java Swing and AWT.
+
+If you find this project helpful, a star is appreciated. Happy hacking!
